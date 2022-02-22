@@ -1,0 +1,16 @@
+{% extends '/base.html.twig' %}
+{% block title %}Films à voir{% endblock %}
+{% block stylesheets %}
+<link rel="stylesheet" href= {{asset('/css/home.css')}}>
+{% endblock %}
+{% block javascripts %}
+{% endblock %}
+
+{%block body %}
+<div class="search-container">
+    <form action={{path('search')}} method="post">
+        <input class="main-search-bar" type="search" name="q" placeholder="Search">
+        <input class="send-button" type="submit" accesskey="enter">
+    </form>
+</div>
+{% endblock %}

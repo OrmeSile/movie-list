@@ -1,0 +1,4 @@
+<a class="director-info-container" href={{ path('director_show',{'tmdbDirectorId':director.tmdbDirectorId}) }}>
+    <img class="director-poster" alt= "director poster" src ={{director.image ?: asset('images/default-poster-big.png')}}>
+    <h3 class="director-name">{{director.name}}</h3>
+</a>

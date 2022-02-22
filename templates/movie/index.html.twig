@@ -1,0 +1,16 @@
+{% extends 'base.html.twig' %}
+{% block title %}Movies Homepage{% endblock %}
+{%block stylesheets%}
+<link rel="stylesheet" href={{asset('/css/movie.index.css')}}>
+{%endblock%}
+{% block body %}
+<div class="poster-container">
+    {% for movieArray in imgurlarray %}
+    <a class="movie-poster-container" href="https://www.themoviedb.org/movie/{{movieArray.tmdb_id}}">
+        <img class="movie-poster" alt= "movie-poster" src ={{movieArray.url ? movieArray.url : asset('images/default-poster-big.png')}}>
+        <div class="shadow"></div>
+    </a>
+    {% endfor %}
+</div>
+{{ include ("snippets/_search_field.html.twig")}}
+{% endblock %}

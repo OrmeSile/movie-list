@@ -1,0 +1,34 @@
+{% extends 'base.html.twig' %}
+{% block stylesheets %}
+<link rel="stylesheet" href={{ asset('/css/topbar.css') }}>
+<link rel="stylesheet" href="{{asset('/css/search-results.css')}}">
+{% endblock %}
+{% block body %}
+{% include "snippets/_top_bar.html.twig"%}
+<div class="all-movies">
+    {% if movies %}
+        <div class="local-movies">
+            <h2 class="section">Local</h2>
+        {% for movie in movies %}
+            {% include 'snippets/_film_search_block.html.twig' %}
+        {% endfor %}
+        </div>
+    {% endif %}
+    {% if apiMovies %}
+        <div class="api-movies">
+            <h2 class="section">Distant</h2>
+        {% for movie in apiMovies %}
+           {% include 'snippets/_film_search_block.html.twig' %}
+        {% endfor %}
+        </div>
+    {% endif %}
+    {% if directors %}
+        <div class="directors">
+        <h2 class="section">Réalisateurs</h2>
+        {% for director in directors %}
+            {% include "snippets/_director_info.html.twig" %}
+        {% endfor %}
+        </div>
+    {% endif %}
+</div>
+{% endblock %}

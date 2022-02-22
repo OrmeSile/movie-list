@@ -1,0 +1,56 @@
+{% extends 'base.html.twig' %}
+{% block title %}{{movie.titre}}{% endblock %}
+{% block stylesheets %}
+<link rel="stylesheet" href={{asset('/css/topbar.css')}}>
+<link rel="stylesheet" href={{asset('/css/movie.{imdb_id}.css')}}>
+{% endblock %}
+{% block body %}
+{% include "snippets/_top_bar.html.twig" %}
+<div class="background-filter"></div>
+<div class="background-filter-radial"></div>
+<div class="movie-backdrop">
+    <img src={{movie.backdrop}} alt="movie backdrop">
+</div>
+<div href="" class="movie-body-container">
+    <div class="poster">
+        <div class="movie-poster">
+            <img src={{movie.imagePathFull ?: asset('images/default-poster-big.png')}} alt= 'movie poster'>
+        </div>
+        <div class="forms">
+            <div class="watched">
+                {{form_start(form)}}
+                {{form_widget(form.watched, 
+                    {'label' : movie.vu ? 'Vu' :'A voir'}
+                )}}
+                {{form_end(form)}}
+            </div>
+            <div class="remove">
+                {{form_start(remove_form)}}
+                {{form_widget(remove_form.remove,
+                    {'label' : 'Retirer de la liste'})}}
+                {{form_end(remove_form)}}
+            </div>
+        </div>
+    </div>
+    <div class="info-container">
+        <div class="main-content">
+            <h1 class="locale-movie-title">{{movie.titre}}</h1>
+            <h3 class="year">{{movie.releaseDate|date("Y")}}</h3>
+            {% for country in movie.countries %}
+            {% if loop.first %}
+                <h3 class="country">{{country|country_name}}</h3>
+            {% endif %}
+            {% endfor %} 
+            {% if movie.director %}
+                <a href={{path ('director_show',{'tmdbDirectorId':movie.director.tmdbDirectorId}) }}>{{movie.director}}</a>
+            {% endif %}
+            <p class="overview">{{movie.overview}}</p>
+        </div>
+        <div class="context-info">
+            <h2 class="original-title">{{movie.originalTitle}}</h2>
+        </div>
+    
+    </div>
+</div>
+{{source("/filters/blurFilter.svg")}}
+{%endblock%}

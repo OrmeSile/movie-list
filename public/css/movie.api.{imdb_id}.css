@@ -1,0 +1,108 @@
+.movie-body-container{
+  margin: 25vh 20vw 10vh 20vw;
+  position: relative;
+  height: 60vh;
+  width: 60vw;
+  display: flex;
+}
+.movie-backdrop{
+  display: flex;
+  min-width: 100%;
+  position: absolute;
+  left: 30vw;
+  top: -10vh;
+  z-index: -1;
+}
+
+.background-filter{
+  top: -10vh;
+  position: absolute;
+  left: 15vw;
+  background: linear-gradient(180deg, rgba(0,0,0,0) 0%, rgba(20,20,20,1) 80%);
+  width: 100vw;
+  height: 90vh;
+  z-index: 0;
+  padding: 0;
+  margin: 0;
+}
+.background-filter-radial{
+  position: absolute;
+  background: radial-gradient(circle, rgba(0,0,0,0)0%, rgba(20,20,20,0.1)20%, rgba(20,20,20,1)70%);
+  top: -10vh;
+  position: absolute;
+  left: 15vw;
+  width: 100vw;
+  height: 90vh;
+  z-index: 0;
+  padding: 0;
+  margin: 0;
+}
+.movie-backdrop>img{
+  width: 70vw;
+}
+.movie-poster{
+  top: -20vh;
+  position: relative;
+  width: 22vw;
+}
+.forms{
+  z-index: 10000;
+  position: relative;
+  top: -18vh;
+  width: 200px;
+}
+form>button{
+  width: 100%;
+  min-height: 30px;
+}
+.movie-poster>img{
+  width: 100%;
+}
+.info-container{
+  height: inherit;
+  display: grid;
+  grid-template-columns: 4fr 1fr;
+}
+.main-content {
+  padding: 50px;
+  width: 32vw;
+  background: white;
+  
+}
+.context-info {
+  padding: 10px;
+  width: 8vw;
+  height: inherit;
+  background: #969899;
+  opacity: 0.6;
+}
+
+.poster{
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  width: 25vw;
+  height: inherit;
+  background: white;
+  padding: 0 1vw
+}
+
+.locale-movie-title{
+  font-size:4vh;
+  position: relative;
+  top: -25vh;
+  color: white;
+}
+.year, .country{
+  color: rgb(170,170,170);
+  font-size: 3vh;
+  position: absolute;
+  top: -5vh;
+}
+.country{
+  left: 33vw;
+}
+body{
+  overflow: hidden;
+  background: rgb(20,20,20);
+}

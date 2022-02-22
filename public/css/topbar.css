@@ -1,0 +1,47 @@
+.search-container{
+    justify-self: center;
+    display: flex;
+    align-items: center;
+    width: 100%;
+    justify-content: center;
+    padding-right: 55px;
+}
+
+.main-search-bar {
+    border: 1px solid rgb(50,50,50);
+    width: 30vw;
+    height: 35px;
+    font-size: larger;
+    padding: 0px 10px;
+    border-radius: 5px;
+     text-align: center;
+}
+
+.send-button{
+    display: none;
+}
+
+.topbar{
+    position: relative;
+    width: 100%;
+    display: flex;
+    min-height: 40px;
+    background-color: rgb(57,126,255);
+    margin-bottom: 10px;
+    z-index: 1000;
+    -webkit-box-shadow: 0px 8px 4px -4px rgba(0,0,0,0.3); 
+    box-shadow: 0px 8px 4px -4px rgba(0,0,0,0.3);
+}
+
+.home-button{
+    position: relative;
+    justify-self: flex-start;
+    aspect-ratio: 1/1;
+    height: 50px;
+    z-index: 1;
+    margin-left: 10px;
+    background: rgba(0,0,0,0.2);
+}
+#movie_search_submit{
+    display: none;
+}

@@ -1,0 +1,19 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}La liste à Charlotte et Vivien{% endblock %}
+{% block stylesheets %}
+<link rel="stylesheet" href={{asset('/css/filter.css') }}>
+<link rel="stylesheet" href={{ asset('/css/home.css') }}>
+<link rel="stylesheet" href={{ asset('/css/topbar.css') }}>
+{% endblock %}
+{% block body %}
+{% include "snippets/_top_bar.html.twig"%}
+{% include "snippets/forms/_filter_form.html.twig" with {form} only %}
+<div class="grid-container">
+<div class="movies-container">
+    {% for movie in movies %}
+    {% include 'snippets/_movie_poster.html.twig' %}
+    {% endfor %}
+</div>
+</div>
+{% endblock %}

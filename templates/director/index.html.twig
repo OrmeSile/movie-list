@@ -1,0 +1,35 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}{{director.name}}{% endblock %}
+{% block stylesheets %}
+<link rel="stylesheet" href={{asset('/css/topbar.css')}}>
+<link rel="stylesheet" href={{asset('/css/director.css')}}>
+{% endblock %}
+{%block body%}
+{% include "snippets/_top_bar.html.twig" %}
+<div class="director-body-container">
+    <div class="director-poster">
+        {% if director.image %}
+            <img src="{{director.image}}" alt="director">
+        {% else %}
+            <img src="{{asset('/images/default-poster-big.png')}}" alt="default-image">
+        {% endif %}
+    </div>
+    <div class="info-container">
+        <div class="main-content">
+            <h1 class="director-name">{{director.name}}</h1>
+            {% if director.biography %}
+                <p class="overview">{{director.biography}}</p>
+            {% endif %}
+        </div>
+            {% if movies %}
+                <h2>Films</h2>
+                <div class="films">
+                {% for movie in movies %}
+                    {% include "snippets/_movie_poster.html.twig" %}
+                {% endfor %}
+            {% endif %}
+        </div>
+    </div>
+</div>
+{% endblock %}

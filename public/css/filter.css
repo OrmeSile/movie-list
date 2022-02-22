@@ -1,0 +1,19 @@
+.form-row{
+    padding: 10px;
+    display: grid;
+    grid-template-columns: 5fr 0.5fr 0.5fr;
+    justify-content: center;
+    width: 800px;
+    align-items: center;
+    background: rgb(35,60,120);
+  }
+  
+  #filter_form_genres{
+    height: 100px;
+    display: grid;
+    grid-template-columns: 1fr 4fr 1fr 4fr 1fr 4fr 1fr 4fr;
+  }
+  form{
+    display: flex;
+    justify-content: center;
+  }

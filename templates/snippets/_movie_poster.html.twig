@@ -1,0 +1,3 @@
+<a class="movie-poster-container" href={{ path('movie_show',{'tmdb_id':movie.tmdbId}) }}>
+    <img class="movie-poster" alt= "movie-poster" src ={{movie.imagePathMedium ?: asset('images/default-poster-big.png')}}>
+</a>
