@@ -66,7 +66,7 @@ form>button{
 .main-content {
   padding: 50px;
   width: 32vw;
-  background: white;
+  background-color: rgb(220,220,220);
   
 }
 .context-info {
@@ -83,7 +83,7 @@ form>button{
   flex-direction: column;
   width: 25vw;
   height: inherit;
-  background: white;
+  background-color: rgb(220,220,220);
   padding: 0 1vw
 }
 
@@ -101,6 +101,12 @@ form>button{
 }
 .country{
   left: 33vw;
+}
+.overview{
+  font-size: 2vh;
+}
+.director{
+font-size: 2.2vh;
 }
 body{
   overflow: hidden;

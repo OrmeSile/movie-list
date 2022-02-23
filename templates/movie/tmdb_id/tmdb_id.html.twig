@@ -42,7 +42,7 @@
             {% endif %}
             {% endfor %} 
             {% if movie.director %}
-                <a href={{path ('director_show',{'tmdbDirectorId':movie.director.tmdbDirectorId}) }}>{{movie.director}}</a>
+                <a class="director" href={{path ('director_show',{'tmdbDirectorId':movie.director.tmdbDirectorId}) }}>{{movie.director}}</a>
             {% endif %}
             <p class="overview">{{movie.overview}}</p>
         </div>

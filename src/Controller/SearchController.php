@@ -11,6 +11,7 @@ use Symfony\Component\Routing\Annotation\Route;
 use App\ApiData\ApiFetcher;
 use App\Repository\DirectorRepository;
 use App\Repository\MovieRepository;
+use App\Entity\Movie;
 
 class SearchController extends AbstractController
 {
@@ -37,6 +38,10 @@ class SearchController extends AbstractController
         $query = $request->query->get('query');
         $movies = $movieRepo->partialSearch($query);
         $apiMovies = $this->api->searchMovies($query);
+        $apiMovies = array_udiff($apiMovies, $movies, 
+            function($localMovie, $distantMovie){
+                return $localMovie->getTmdbId() - $distantMovie->getTmdbId();
+            });
         $directors = $directorRepo->search($query);
         
         return $this->render('search/index.html.twig',[

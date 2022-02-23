@@ -195,8 +195,13 @@ class ApiFetcher{
      */
     public function getPersonFields(string $id): ?array
     {
-        $person = json_decode(file_get_contents("https://api.themoviedb.org/3/person/{$id}?api_key={$_SERVER["API_KEY"]}"));
-        return ['name' => $person->name, 'biography' => $person->biography];
+        $person = json_decode(file_get_contents("https://api.themoviedb.org/3/person/{$id}?api_key={$_SERVER["API_KEY"]}&language=fr"));
+        if(!empty($person->biography)){
+            return ['name' => $person->name, 'biography' => $person->biography];
+        }else{
+            $person = json_decode(file_get_contents("https://api.themoviedb.org/3/person/{$id}?api_key={$_SERVER["API_KEY"]}&language=en-US"));
+            return ['name' => $person->name, 'biography' => $person->biography];
+        }
     }
 
     /**

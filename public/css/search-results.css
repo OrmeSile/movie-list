@@ -1,81 +1,82 @@
 .all-movies{
-    display: grid;
-    grid-template: "a a a a b b b c";
-    width: 90%;
-    margin-left: 5%;
-    
+  display: grid;
+  grid-template: "a a a a b b b c";
+  width: 90%;
+  margin-left: 5%;
+  
 }
 .local-movies, .api-movies{
-    display: flex;
-    flex-direction: column;
-    min-width: 100%;
+  display: flex;
+  flex-direction: column;
+  min-width: 100%;
 }
 .local-movies{
-    grid-area: b;
+  grid-area: b;
 }
 .api-movies{
-    width: 100%;
-    grid-area: a;
+  width: 100%;
+  grid-area: a;
 }
 .movie{
-    display: flex;
-    height: 150px;
-    margin: 5px;
-    background-color: rgb(220,220,220);
-    text-decoration: none;
+  display: flex;
+  height: 14vh;
+  margin: 0.3vh;
+  background-color: rgb(220,220,220);
+  text-decoration: none;
 }
 .movie>img{
-    object-fit: scale-down;
+  object-fit: scale-down;
 }
 .movie:hover{
-    background-color: white;
+  background-color: white;
 }
 .info-container{
-    width: 100%;
-    display: grid;
-    grid-column-gap: 10px;
-    grid-template: 
-        "t o" 
-        "d o"/1fr 4fr;
-    color: rgb(50,50,50);
-    padding: 1%;
+  width: 100%;
+  display: grid;
+  grid-column-gap: 10px;
+  grid-template: 
+      "t o" 
+      "d o"/1fr 4fr;
+  color: rgb(50,50,50);
+  padding: 1%;
 }
-.info-container>title{
-    grid-area: t;
-    padding: 5px;
-    font-size: 1.1rem;
+.info-container>.title{
+  grid-area: t;
+  padding: 5px;
+  font-size: 1.5vh;
 }
 .info-container>.release-date{
-    grid-area: d;
+  grid-area: d;
+  font-size: 1.4vh;
 }
 .info-container>.overview{
-    grid-area: o;
-    font-size: 0.8rem;
-    height: 100%;
+  grid-area: o;
+  font-size: 1.3vh;
+  height: 100%;
 }
 h2{
-    color: white;
+  color: white;
 }
 .directors{
-    grid-area: c;
+  grid-area: c;
 }
 .director-info-container{
-    margin: 5px;
-    height: 310px;
-    width: 170px;
-    background-color: rgb(220,220,220);
-    display: flex;
-    flex-direction: column;
-    color: rgb(50,50,50);
-    text-decoration: none;
-    text-align: center;
+  margin: 5px;
+  height: 310px;
+  width: 170px;
+  background-color: rgb(220,220,220);
+  display: flex;
+  flex-direction: column;
+  color: rgb(50,50,50);
+  text-decoration: none;
+  text-align: center;
 }
 .director-info-container>img{
-    object-fit: scale-down;
+  object-fit: scale-down;
 }
 .director-info-container>h3{
-    margin: auto;
+  margin: auto;
 }
 .section{
-    text-align: center;
+  text-align: center;
 }

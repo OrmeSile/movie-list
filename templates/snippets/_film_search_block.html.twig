@@ -2,7 +2,7 @@
     <img src={{movie.imagePathSmall ?: asset('images/default-poster-big.png')}} alt={{movie.titre}} class="poster">
     <div class="info-container">
         <h4 class="title">{{movie.titre}}</h4>
-        <h5 class="release-date">{{movie.releaseDate}}</h5>
+        <h5 class="release-date">{{movie.releaseDate|date('Y')}}</h5>
         <p class="overview">{{movie.overview}}</p>
     </div>
 </a>

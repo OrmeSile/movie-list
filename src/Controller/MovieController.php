@@ -105,14 +105,13 @@ class MovieController extends AbstractController
         }
         $em->flush();
     }
-    #[Route('/populate/backdrop')]
+   
+    #[Route('/populate/director-bio')]
     public function populateBackdrop(ManagerRegistry $doctrine){
         $em = $doctrine->getManager();
-        $movies = $em->getRepository(Movie::class)->findAll();
-        foreach($movies as $movie){
-            $movieInfo = $this->api->getMovieInfoWithId($movie->getTmdbId());
-            $backdrop = $this->api->getFullImagePath(6, $movieInfo->backdrop_path);
-            $movie->setBackdrop($backdrop);
+        $directors = $em->getRepository(Director::class)->findAll();
+        foreach($directors as $director){
+            $director->setBiography($this->api->getPersonFields($director->getTmdbDirectorId())['biography']);
         }
         $em->flush();
     }
