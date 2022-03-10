@@ -1,5 +1,5 @@
 # movie-list
-Short list of movies to watch, based on **themoviedb.org** data.
+Short list of movies to watch, based on [**themoviedb.org**](https://www.themoviedb.org/) data.
 Lets you search, add, mark as seen and delete movies from your list. 
 
 Written in PHP 8, using Symfony as a framework.
